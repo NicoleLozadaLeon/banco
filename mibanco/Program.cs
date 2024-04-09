@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+List<Cliente> listaClientes = new List<Cliente>();
 bool fin = false;
 
 while(fin == false){
@@ -30,8 +31,14 @@ while(fin == false){
     if(continuar == 2){
         fin = true;
     }
-
+    listaClientes.Add(cliente);
 } //Fin del while
+
+Console.WriteLine("Lista de clientes registrados:");
+        foreach (var cliente in listaClientes)
+        {
+            Console.WriteLine($"Nombre: {cliente.Nombre}, CI: {cliente.NumeroCedula}, Saldo Total: {cliente.SaldoTotal}, Nro Cuenta: {cliente.NroCuenta}");
+        }
 
 struct Cliente {
     public string Nombre;
